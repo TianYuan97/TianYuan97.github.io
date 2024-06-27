@@ -61,14 +61,14 @@
         animation: latido 1s infinite;
         background-color: red;
         display: inline-block;
-        height: 100px;
+        height: 400px;
         margin: 0 10px;
         top: 0;
         transform: rotate(-45deg);
         position: absolute; 
         left: 37%; 
         top: 35%;
-        width: 100px;
+        width: 400px;
         }
 
         .heart:before,
@@ -76,35 +76,58 @@
         content: "";
         background-color: red;
         border-radius: 50%;
-        height: 100px;
+        height: 400px;
         position: absolute;
-        width: 100px;
+        width: 400px;
         }
 
         .heart:before {
-        top: -50px;
+        top: -200px;
         left: 0;
         }
 
         .heart:after {
-        left: 50px;
+        left: 200px;
         top: 0;
         }
 
-
+        @keyframes latido {
+        0%
+        {
+            transform: scale( 1 )
+            rotate(-45deg);    
+        }
+        20%
+        {
+            transform: scale( 1.25 )
+            rotate(-45deg);  
+        }
+        40%
+        {
+            transform: scale( 1.5 )
+            rotate(-45deg);
+        }
+        }
         .heart-text {
             position: absolute;
             top: 30%;
             left: 70%;
             transform: translate(-50%, -50%) rotate(45deg);
             color: white;
-            font-size: 3em;
+            font-size: 6em;
             font-weight: bold;
             text-align: center;
             z-index: 999;
             white-space: nowrap; /* Evita el salto de línea */
         }
-   
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+        }
     </style>
 <body>
     <div id="content" class="card">
