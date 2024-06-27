@@ -57,50 +57,46 @@
             align-items: center;
             z-index: 1000;
         }
-
         .heart {
             animation: latido 1s infinite;
             background-color: red;
             display: inline-block;
-            height: 50px;
-            width: 50px;
+            height: 200px; /* Tamaño fijo para dispositivos móviles y PCs */
+            width: 200px; /* Tamaño fijo para dispositivos móviles y PCs */
             position: absolute;
-            left: 50%;
-            top: 50%;
+            top: 50%; /* Centrado vertical */
+            left: 50%; /* Centrado horizontal */
             transform: translate(-50%, -50%) rotate(-45deg);
         }
 
-        .heart:before,
-        .heart:after {
-            content: "";
-            background-color: red;
-            border-radius: 50%;
-            height: 50px;
-            width: 50px;
-            position: absolute;
+        @media (max-width: 768px) {
+            .heart {
+                height: 150px; /* Tamaño fijo para dispositivos móviles */
+                width: 150px; /* Tamaño fijo para dispositivos móviles */
+            }       
         }
-
-        .heart:before {
-            top: -25px;
-            left: -25px;
-        }
-
-        .heart:after {
-            left: 25px;
-            top: 0;
-        }
-
         .heart-text {
             position: absolute;
-            top: 70%;
-            left: 50%;
+            top: 50%; /* Centrado vertical */
+            left: 50%; /* Centrado horizontal */
             transform: translate(-50%, -50%) rotate(45deg);
             color: white;
-            font-size: 1.5em;
+            font-size: 3em; /* Tamaño de fuente fijo */
             font-weight: bold;
             text-align: center;
             z-index: 999;
-            white-space: nowrap;
+            white-space: nowrap; /* Evita el salto de línea */
+        }
+        @keyframes latido {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+            20% {
+                transform: scale(1.25) rotate(-45deg);
+            }
+            40% {
+                transform: scale(1.5) rotate(-45deg);
+            }
         }
 
     </style>
