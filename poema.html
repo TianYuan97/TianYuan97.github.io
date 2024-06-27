@@ -3,40 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poema: Presente simple (Confianza)</title>
+    <title>Poema: Dos almas, Un destino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+
+
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif; /* Fuente de respaldo */
             line-height: 1.6;
             padding: 20px;
+            background-color: #333; /* Fondo oscuro por defecto */
+            color: #fff; /* Color del texto para fondo oscuro */
+            transition: background-color 0.5s, color 0.5s; /* Transiciones suaves */
         }
         .poem {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            font-family: 'Lora', serif; /* Aplicar la fuente Lora */
         }
         .poem h2 {
             color: #ff5722;
             text-align: center;
         }
         .poem p {
-            color: #333;
+            color: #fff; /* Color del texto para fondo oscuro */
             text-align: justify;
+            margin-bottom: 20px;
+        }
+        .author {
+            font-size: 0.9em; /* Tamaño de texto más pequeño */
+            font-style: italic; /* Fuente cursiva */
+            text-align: right;
+            color: #ccc; /* Color más claro para el autor */
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: #e64a19;
+        }
+        .light-mode {
+            background-color: #fff; /* Fondo claro */
+            color: #333; /* Color del texto para fondo claro */
+        }
+        .light-mode .poem p, 
+        .light-mode .author {
+            color: #333; /* Color del texto para fondo claro */
+        }
+        .light-mode .toggle-btn {
+            background-color: #333;
+            color: #fff;
+        }
+        .light-mode .toggle-btn:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
     <div class="poem">
-        <h2>Presente simple (Confianza)</h2>
-        <p>Ni recuerdos ni presagios:<br>
-        sólo presente, cantando.</p>
-        <p>Ni silencio, ni palabras:<br>
-        tu voz, sólo, sólo, hablándome.</p>
-        <p>Ni manos ni labios:<br>
-        tan solo dos cuerpos,<br>
-        a lo lejos, separados.</p>
-        <p>Ni luz ni tiniebla,<br>
-        ni ojos ni mirada:<br>
-        visión, la visión del alma.</p>
+        <button class="toggle-btn" onclick="toggleTheme()">Cambiar fondo</button>
+        <select id="fontSelector" onchange="changeFont(this.value)">
+            <option value="Lora">Lora</option>
+            <option value="Libre Baskerville">Libre Baskerville</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Crimson Text">Crimson Text</option>
+            <option value="EB Garamond">EB Garamond</option>
+        </select>
+        
+        <h2>Dos almas, Un destino</h2>
+        <p>Ojos profundos como la noche,<br>
+        universos enteros en su brillo,<br>
+        destellos de estrellas al parpadear,<br>
+        misterios infinitos en su mirar.</p>
+
+        <p>Labios rosados como peonías en primavera,<br>
+        suaves y delicados como pétalos de flor,<br>
+        susurros de promesas en cada beso,<br>
+        sabores de amor eterno en su dulzor.</p>
+
+        <p>Cabello fluyendo como un río cristalino,<br>
+        cascada de seda al viento,<br>
+        delicado al tacto, suave como la brisa,<br>
+        un manto de sueños envolviéndome.</p>
+
+        <p>Amable como la luz dorada del atardecer,<br>
+        gentil como el susurro del viento,<br>
+        como el aleteo frágil de una mariposa,<br>
+        que trae consigo paz y sosiego.</p>
+
+        <p>Enséñame a querer con la pureza de tu alma,<br>
+        a amar con la fuerza de tu corazón,<br>
+        a sonreír con la sinceridad de tu alegría,<br>
+        a ser feliz con la simpleza de tu ser.</p>
+
+        <p>Muéstrame ese lado oculto de tu corazón,<br>
+        esos sentimientos que residen en la sombra,<br>
+        esas emociones que nadie más ha tocado,<br>
+        tu esencia más profunda y verdadera.</p>
+
+        <p>Enamórame con esa voz dulce y melódica,<br>
+        un canto de sirena en la marea del tiempo,<br>
+        enamórame con tu toque, cálido y tierno,<br>
+        enamórame con tus besos, suaves como el terciopelo,<br>
+        enamórame con tus palabras,<br>
+        poemas que florecen en mi alma.</p>
+
+        <p>Ámame con todo tu ser,<br>
+        con tus alegrías y tus penas,<br>
+        con tus días de sol y de lluvia,<br>
+        con cada latido de tu vida.</p>
+
+        <p>Dos almas entrelazadas en un baile eterno,<br>
+        dos cuerpos deseándose en la penumbra,<br>
+        dos sentimientos anhelando unirse,<br>
+        dos formas, luz y sombra, en perfecta armonía.</p>
+
+        <p>Ven a mí con tu cuerpo desnudo,<br>
+        abraza mi ser con tu calor,<br>
+        hagamos florecer la santidad de la familia,<br>
+        nunca sueltes mi mano, sé mi ancla y mi puerto.</p>
+
+        <p>Te anhelo en cada suspiro,<br>
+        te deseo en cada latido,<br>
+        te quiero con toda mi existencia,<br>
+        te amo con toda mi eternidad.</p>
+
+        <div class="author">Joel Cornelio</div>
     </div>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+    <script>
+        function changeFont(fontName) {
+            var poemElement = document.querySelector('.poem');
+            poemElement.style.fontFamily = "'" + fontName + "', serif";
+        }
+    </script>
+    
 </body>
 </html>
