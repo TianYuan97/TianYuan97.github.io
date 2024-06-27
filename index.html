@@ -58,47 +58,76 @@
             z-index: 1000;
         }
         .heart {
-            animation: latido 1s infinite;
-            background-color: red;
-            display: inline-block;
-            height: 200px; /* Tamaño fijo para dispositivos móviles y PCs */
-            width: 200px; /* Tamaño fijo para dispositivos móviles y PCs */
-            position: absolute;
-            top: 50%; /* Centrado vertical */
-            left: 50%; /* Centrado horizontal */
-            transform: translate(-50%, -50%) rotate(-45deg);
+        animation: latido 1s infinite;
+        background-color: red;
+        display: inline-block;
+        height: 400px;
+        margin: 0 10px;
+        top: 0;
+        transform: rotate(-45deg);
+        position: absolute; 
+        left: 37%; 
+        top: 35%;
+        width: 400px;
         }
 
-        @media (max-width: 768px) {
-            .heart {
-                height: 150px; /* Tamaño fijo para dispositivos móviles */
-                width: 150px; /* Tamaño fijo para dispositivos móviles */
-            }       
+        .heart:before,
+        .heart:after {
+        content: "";
+        background-color: red;
+        border-radius: 50%;
+        height: 400px;
+        position: absolute;
+        width: 400px;
+        }
+
+        .heart:before {
+        top: -200px;
+        left: 0;
+        }
+
+        .heart:after {
+        left: 200px;
+        top: 0;
+        }
+
+        @keyframes latido {
+        0%
+        {
+            transform: scale( 1 )
+            rotate(-45deg);    
+        }
+        20%
+        {
+            transform: scale( 1.25 )
+            rotate(-45deg);  
+        }
+        40%
+        {
+            transform: scale( 1.5 )
+            rotate(-45deg);
+        }
         }
         .heart-text {
             position: absolute;
-            top: 50%; /* Centrado vertical */
-            left: 50%; /* Centrado horizontal */
+            top: 0%;
+            left: 30%;
             transform: translate(-50%, -50%) rotate(45deg);
             color: white;
-            font-size: 3em; /* Tamaño de fuente fijo */
+            font-size: 6em;
             font-weight: bold;
             text-align: center;
             z-index: 999;
             white-space: nowrap; /* Evita el salto de línea */
         }
-        @keyframes latido {
-            0% {
+        @keyframes heartbeat {
+            0%, 100% {
                 transform: scale(1) rotate(-45deg);
             }
-            20% {
-                transform: scale(1.25) rotate(-45deg);
-            }
-            40% {
-                transform: scale(1.5) rotate(-45deg);
+            50% {
+                transform: scale(1.1) rotate(-45deg);
             }
         }
-
     </style>
 <body>
     <div id="content" class="card">
